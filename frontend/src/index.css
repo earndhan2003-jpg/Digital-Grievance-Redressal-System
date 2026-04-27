@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    --primary: 213 62% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 44 92% 52%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 210 18% 93%;
+    --muted-foreground: 215 12% 48%;
+
+    --accent: 160 50% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 213 62% 35%;
+
+    --radius: 0.5rem;
+
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 25% 15%;
+    --info: 200 80% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 213 62% 25%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 44 92% 52%;
+    --sidebar-primary-foreground: 215 25% 15%;
+    --sidebar-accent: 213 55% 32%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 213 50% 30%;
+    --sidebar-ring: 44 92% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .status-pending {
+    @apply bg-warning/15 text-warning border border-warning/30;
+  }
+  .status-in-progress {
+    @apply bg-info/15 text-info border border-info/30;
+  }
+  .status-resolved {
+    @apply bg-success/15 text-success border border-success/30;
+  }
+  .priority-low {
+    @apply bg-success/15 text-success;
+  }
+  .priority-medium {
+    @apply bg-warning/15 text-warning;
+  }
+  .priority-high {
+    @apply bg-destructive/15 text-destructive;
+  }
+}
